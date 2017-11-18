@@ -1,3 +1,3 @@
-from .Comment import Comment
-from .Feed import Feed
-from .Post import Post
+from .comment import Comment
+from .feed import Feed
+from .post import Post

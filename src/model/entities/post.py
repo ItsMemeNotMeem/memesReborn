@@ -6,11 +6,10 @@ from model.entities import Comment
 
 class Post:
     def __init__(self, text: str, image: str, comments: List[Comment], url: str,
-                 datePosted: datetime, lastestUpdate: datetime):
+                 date_posted: datetime, latest_update: datetime):
         self.text = text
         self.image = image
         self.comments = comments
         self.url = url
-        self.datePosted = datePosted
-        self.lastestUpdate = lastestUpdate
-
+        self.date_posted = date_posted
+        self.lates_update = latest_update
