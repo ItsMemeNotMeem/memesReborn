@@ -56,3 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
+# Created by .ignore support plugin (hsz.mobi)
+**/*.iml
+.idea/
