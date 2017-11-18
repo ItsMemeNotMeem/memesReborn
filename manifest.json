@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Memes",
+  "description": "This extension allows the user to scrape memes off a page",
+  "version": "1.3.37",
+
+  "browser_action": {
+    "default_icon": "memeGod.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
