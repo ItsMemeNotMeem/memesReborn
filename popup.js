@@ -20,7 +20,7 @@ $(document).ready(function(){
   getMemes().then(function(data){
     console.log('data', data)
     var memes = data.data.memes
-    for(var i = 0; i < 10; i++){
+    for(var i = 0; i < 12; i++){
       $divChild= $('<div>')
       $p = $('<p>')
       memes[i]
