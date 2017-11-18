@@ -6,13 +6,22 @@
  -->
 <html>
   <head>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="popup.js"></script>
+      
     <title>Getting Started Extension's Popup</title>
     <style type="text/css">
       body {
         margin: 10px;
-        white-space: nowrap;
+        width: 800px;
+        height: 800px;
       }
-
+      .parent {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       h1 {
         font-size: 15px;
       }
@@ -20,33 +29,27 @@
       #container {
         align-items: center;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
       }
     </style>
 
     <!--
-          - JavaScript and HTML must be in separate files: see our Content Security
-          - Policy documentation[1] for details and explanation.
-          -
-          - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-        -->
-    <script src="popup.js"></script>
-    </head>
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+  </head>
+
+  <body>
+    <h1>Meme Search</h1>
+    <div id="container">
+    </div>
+    <div id="memes">
+
+    </div>
     
-    <body>
-      <h1>Background Color Changer</h1>
-      <div id="container">
-        <div>
-          <img src="memeGod.png" alt="MEME?" height="200" width="200">
-        </div>
-        <div>
-            <p1>HELLO</p1>
-        </div>
-        <div>
-            <p2>HI</p2>
-        </div>
-        
-      </div>
-    </body>
-    
-    </html>
+  </body>
+</html>
+
