@@ -2,6 +2,8 @@ import argparse
 import os
 from pathlib import Path
 
+import nltk
+
 CONFIG_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
@@ -28,7 +30,12 @@ def load_token() -> str:
     return Path(_get_token_file()).read_text()
 
 
+def download_nltk():
+    nltk.download()
+
+
 if __name__ == '__main__':
     cli_parser = generate_parser()
+    download_nltk()
     if hasattr(cli_parser, 'token'):
         write_token()
