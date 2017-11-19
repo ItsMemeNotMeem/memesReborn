@@ -1,20 +1,12 @@
-import json
-
 import requests
 
 from config import load_token
+from model.scraper.util import generate_url_query, get_json_response
+
 TOKEN = load_token()
 
 FACEBOOK_GRAPH_BASE_URL = "https://graph.facebook.com/v2.11/"
 BRUINFEED = "163576114113950"
-
-
-def get_json_response(response):
-    return json.loads(response.content)
-
-
-def generate_url_query(query):
-    return FACEBOOK_GRAPH_BASE_URL + query
 
 
 class FeedScraper:
@@ -24,7 +16,7 @@ class FeedScraper:
 
     def get_posts(self):
         feed_response = requests.get(
-            generate_url_query(BRUINFEED + "/feed?limit=" + self.limit+"&access_token=" + TOKEN)
+            generate_url_query(self.feed_id + "/feed?limit=" + self.limit)
         )
         return get_json_response(feed_response)
 
