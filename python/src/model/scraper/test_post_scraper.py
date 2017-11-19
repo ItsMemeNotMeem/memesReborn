@@ -1,4 +1,4 @@
-from scraper.post_scraper import PostScraper
+from model.scraper.post_scraper import PostScraper
 
 
 def assert_url(expected_url, post_scraper):
