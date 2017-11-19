@@ -9,8 +9,9 @@
 <head>
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./src/popup.js"></script>
+  <script src="./src/dummyData.js"></script>
   <title>Getting Started Extension's Popup</title>
-  <link rel="stylesheet" type="text/css" href="./src/style/style.cssƒ">
+  <link rel="stylesheet" type="text/css" href="./src/style/style.css">
   <style type="text/css">
     .btn-group {
       width: 50%;
@@ -66,9 +67,10 @@
 
     .parent {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
       justify-content: flex-start;
+      margin: 15px
     }
 
     .divChild {
@@ -136,6 +138,11 @@
       -webkit-transition: opacity .55s ease-in-out;
     }
 
+    /* div p {
+      width: 200px;
+      height: 50px;
+    } */
+
     @keyframes fadein {
       from {
         opacity: 0;
@@ -190,10 +197,11 @@
 </head>
 
 <body>
+<!-- WIP for additional tab
   <div class="btn-group">
-    <button id='show-fb'>Facebook Group Feed</button>
-    <button id='show-universal'>Database</button>
-  </div>
+  <button id='show-fb'>Facebook Group Feed</button>
+  <button id='show-universal'>Database</button>
+</div>
 
 <div id='hider'>
   <div id="facebook-feed">
@@ -204,15 +212,15 @@
     <div id="fb-memes">
     </div>
   </div>
-</div>
+</div> -->
 
-  <div id="universal-feed">
-    <div id="container">
-      <h1>Meme Search</h1>
-      <input id="search" type="text" name="search" placeholder="Search...">
-    </div>
-    <div id="memes"></div>
+<div id="universal-feed">
+  <div id="container">
+    <h1>Meme Search</h1>
+    <input id="search" type="text" name="search" placeholder="Search...">
   </div>
+  <div id="memes"></div>
+</div>
 </body>
 
 </html>
