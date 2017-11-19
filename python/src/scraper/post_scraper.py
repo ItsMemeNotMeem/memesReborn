@@ -4,6 +4,8 @@ from urllib.request import urlopen
 
 import requests
 
+from model.entities import Post
+
 TOKEN = os.environ.get('FACEBOOK_TEMP_TOKEN')
 
 FACEBOOK_GRAPH_BASE_URL = "https://graph.facebook.com/v2.11/"
@@ -34,3 +36,23 @@ class PostScraper:
             FACEBOOK_GRAPH_BASE_URL + object_id + "?fields=comments&access_token=" + TOKEN
         )
         print(get_json_response(picture_response))
+        return get_json_response(picture_response)
+
+    def get_date_posted(self):
+        object_id = self.__get_obj_id()
+        date_posted = requests.get(
+            FACEBOOK_GRAPH_BASE_URL + object_id + "?fields=created_time&access_token=" + TOKEN
+        )
+        return get_json_response(date_posted)['created_time']
+
+    def get_updated_time(self):
+        object_id = self.__get_obj_id()
+        date_posted = requests.get(
+            FACEBOOK_GRAPH_BASE_URL + object_id + "?fields=updated_time&access_token=" + TOKEN
+        )
+        return get_json_response(date_posted)['updated_time']
+
+    def get_post_obj(self):
+        post_obj = Post("", self.get_picture_url(), self.get_comments(), self.get_picture_url(),
+                        self.get_date_posted(), self.get_updated_time())
+        return post_obj

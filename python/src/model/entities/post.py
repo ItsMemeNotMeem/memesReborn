@@ -12,4 +12,4 @@ class Post:
         self.comments = comments
         self.url = url
         self.date_posted = date_posted
-        self.lates_update = latest_update
+        self.latest_update = latest_update
