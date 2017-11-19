@@ -31,14 +31,23 @@ $(document).ready(function(){
       console.log('name url width height', name, url, width, height)
       $p.text(name)
       var $img = $('<img>')    
-      $img.attr({name:name, src: url, width: 250})
+      $img.attr({name:name, src: url, width: 220, href: url})
+      $img.click(function(){
+        chrome.tabs.create({url:$(this).attr('href')})
+      })
+      var $imgWrap = $('<div>')
+      $imgWrap.addClass('imageWrapper')
       $divChild.append($p)
-      $divChild.append($img)
+      $imgWrap.append($img)
+      $divChild.append($imgWrap)
       $divParent.append($divChild)
     }
     $('#memes').append($divParent)
   })
 
+    $('#search').on('change', function(e){
+      console.log('e',e)
+    })
 
 })
 
