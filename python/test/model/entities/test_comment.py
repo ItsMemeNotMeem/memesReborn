@@ -1,4 +1,4 @@
-from src.model.entities import Comment
+from model.entities import Comment
 
 
 def test_creation():
