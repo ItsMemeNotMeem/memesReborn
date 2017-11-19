@@ -1,7 +1,7 @@
 import datetime
 from typing import List
 
-from model.entities import Post
+from model.entities.post import Post
 
 
 class Feed:

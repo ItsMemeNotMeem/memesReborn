@@ -1,3 +1,3 @@
-from model.entities.comment import Comment
-from model.entities.feed import Feed
-from model.entities.post import Post
+from .comment import Comment
+from .feed import Feed
+from .post import Post
