@@ -1,11 +1,18 @@
+from urllib.request import urlopen
+
 import pytesseract
 from PIL import Image
 from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
 
 
-def read_image_text(image_path: str):
-    return pytesseract.image_to_string(Image.open(image_path))
+def read_local_image_text(local_image_path: str):
+    return pytesseract.image_to_string(Image.open(local_image_path))
+
+
+def read_url_image_text(url: str):
+    image = Image.open(urlopen(url))
+    return pytesseract.image_to_string(image)
 
 
 def clean_text(sentence):
