@@ -21,33 +21,33 @@ $(document).ready(function () {
   var $divParent = $('<div>')
   $divParent.addClass('parent')
   
-  // getMemes().then(function (data) {
-  //   console.log('data', data)
-  //   var memes = data.data.memes
-  //   for (var i = 0; i < 12; i++) {
-  //     $divChild = $('<div>')
-  //     $p = $('<p>')
-  //     memes[i]
-  //     var name = memes[i].name
-  //     var url = memes[i].url
-  //     var width = memes[i].width
-  //     var height = memes[i].height
-  //     console.log('name url width height', name, url, width, height)
-  //     $p.text(name)
-  //     var $img = $('<img>')
-  //     $img.attr({ name: name, src: url, width: 220, href: url })
-  //     $img.click(function () {
-  //       chrome.tabs.create({ url: $(this).attr('href') })
-  //     })
-  //     var $imgWrap = $('<div>')
-  //     $imgWrap.addClass('imageWrapper')
-  //     $divChild.append($p)
-  //     $imgWrap.append($img)
-  //     $divChild.append($imgWrap)
-  //     $divParent.append($divChild)
-  //   }
-  //   $('#memes').append($divParent)
-  // })
+  getMemes().then(function (data) {
+    console.log('data', data)
+    var memes = data.data.memes
+    for (var i = 0; i < 12; i++) {
+      $divChild = $('<div>')
+      $p = $('<p>')
+      memes[i]
+      var name = memes[i].name
+      var url = memes[i].url
+      var width = memes[i].width
+      var height = memes[i].height
+      console.log('name url width height', name, url, width, height)
+      $p.text(name)
+      var $img = $('<img>')
+      $img.attr({ name: name, src: url, width: 220, href: url })
+      $img.click(function () {
+        chrome.tabs.create({ url: $(this).attr('href') })
+      })
+      var $imgWrap = $('<div>')
+      $imgWrap.addClass('imageWrapper')
+      $divChild.append($p)
+      $imgWrap.append($img)
+      $divChild.append($imgWrap)
+      $divParent.append($divChild)
+    }
+    $('#memes').append($divParent)
+  })
 
   $('#show-universal').on('click',function(){
     $('#facebook-feed').show()
