@@ -4,162 +4,215 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
-<html>
-  <head>
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="./src/popup.js"></script>
-    <title>Getting Started Extension's Popup</title>
-    <link rel="stylesheet" type="text/css" href="./src/style/style.cssƒ">
-    <style type="text/css">
-        .btn-group {
-          width: 50%;
-          margin: 0 auto;
-        }
-        .btn-group button {
-            background-color: #4CAF50; /* Green background */
-            border: 1px solid green; /* Green border */
-            color: white; /* White text */
-            padding: 10px 24px; /* Some padding */
-            cursor: pointer; /* Pointer/hand icon */
-            float: left; /* Float the buttons side by side */
-            border-radius: 0;
-            width: 50%;
-        }
+<html class='no-js'>
 
-        .btn-group button:not(:last-child) {
-            border-radius: 5px 0 0 5px;
-            border-right: none; /* Prevent double borders */
-        }
-        .btn-group button:not(:first-child) {
-            border-radius: 0 5px 5px 0;
-            border-right: none; /* Prevent double borders */
-        }
-        /* Clear floats (clearfix hack) */
-        .btn-group:after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+<head>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./src/popup.js"></script>
+  <title>Getting Started Extension's Popup</title>
+  <link rel="stylesheet" type="text/css" href="./src/style/style.cssƒ">
+  <style type="text/css">
+    .btn-group {
+      width: 50%;
+      margin: 0 auto;
+    }
 
-        /* Add a background color on hover */
-        .btn-group button:hover {
-            background-color: #3e8e41;
-        }
-        body {
-          width: 800px;
-          height: 800px;
-          background-color: #EEE;
+    .btn-group button {
+      background-color: #4CAF50;
+      /* Green background */
+      border: 1px solid green;
+      /* Green border */
+      color: white;
+      /* White text */
+      padding: 10px 24px;
+      /* Some padding */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      float: left;
+      /* Float the buttons side by side */
+      border-radius: 0;
+      width: 50%;
+    }
 
-        }
-        .parent {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-        }
-        .divChild {
-          margin: 15px
-        }
-        h1 {
-          font-size: 15px;
-        } 
-        .imageWrapper {
-          height: 150px;
-          display:flex;
-          align-items: center;
-          overflow:hidden;
-        }
-        #container {
-          background-color: white;
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          margin: 15px;
-          padding: 15px;
-        }
-        #memes {
-          background-color: white;    
-          margin: 15px;    
-          padding: 15px;   
-        }
-        #memes img {
-            margin-top: 25px;
-            font-size: 21px;
-            text-align: center;
-            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 1s; /* Firefox < 16 */
-            -ms-animation: fadein 1s; /* Internet Explorer */
-            -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
+    .btn-group button:not(:last-child) {
+      border-radius: 5px 0 0 5px;
+      border-right: none;
+      /* Prevent double borders */
+    }
 
-            opacity: 1.0
-            transition: opacity 0.35s ease-in-out;
-            -moz-transition: opacity 0.35s ease-in-out;
-            -webkit-transition: opacity 0.35s ease-in-out;
-        }
-        #memes img:hover {
-          opacity: 0.4;
-          transition: opacity .55s ease-in-out;
-          -moz-transition: opacity .55s ease-in-out;
-          -webkit-transition: opacity .55s ease-in-out;
-        }
-        @keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
+    .btn-group button:not(:first-child) {
+      border-radius: 0 5px 5px 0;
+      border-right: none;
+      /* Prevent double borders */
+    }
+    /* Clear floats (clearfix hack) */
 
-        /* Firefox < 16 */
-        @-moz-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
+    .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    /* Add a background color on hover */
 
-        /* Safari, Chrome and Opera > 12.1 */
-        @-webkit-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
+    .btn-group button:hover {
+      background-color: #3e8e41;
+    }
 
-        @-webkit-keyframes ease-in-out {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        input[type=text] {
-        height: 20px;
-        width: 230px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
-        }
+    body {
+      width: 800px;
+      height: 800px;
+      background-color: #EEE;
+    }
 
-        /* When the input field gets focus, change its width to 100% */
-        input[type=text]:focus {
-            width: 300px;
-            height: 30px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="btn-group">
-      <button id='show-fb'>Facebook Group Feed</button>
-      <button id='show-universal'>Database</button>
+    .parent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .divChild {
+      margin: 15px
+    }
+
+    h1 {
+      font-size: 15px;
+    }
+
+    .imageWrapper {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #container {
+      background-color: white;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 15px;
+      padding: 15px;
+    }
+
+    #memes {
+      background-color: white;
+      margin: 15px;
+      padding: 15px;
+    }
+
+    #memes img {
+      margin-top: 25px;
+      font-size: 21px;
+      text-align: center;
+      -webkit-animation: fadein 1s;
+      /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 1s;
+      /* Firefox < 16 */
+      -ms-animation: fadein 1s;
+      /* Internet Explorer */
+      -o-animation: fadein 1s;
+      /* Opera < 12.1 */
+      animation: fadein 1s;
+      opacity: 1.0;
+      transition: opacity 0.35s ease-in-out;
+      -moz-transition: opacity 0.35s ease-in-out;
+      -webkit-transition: opacity 0.35s ease-in-out;
+    }
+
+    #hider {
+      display: none;
+    }
+
+    html.no-js #hider {
+      display: block;
+    }
+
+    #memes img:hover {
+      opacity: 0.4;
+      transition: opacity .55s ease-in-out;
+      -moz-transition: opacity .55s ease-in-out;
+      -webkit-transition: opacity .55s ease-in-out;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    /* Firefox < 16 */
+
+    @-moz-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    /* Safari, Chrome and Opera > 12.1 */
+
+    @-webkit-keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes ease-in-out {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    input[type=text] {
+      height: 20px;
+      width: 230px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+    /* When the input field gets focus, change its width to 100% */
+
+    input[type=text]:focus {
+      width: 300px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn-group">
+    <button id='show-fb'>Facebook Group Feed</button>
+    <button id='show-universal'>Database</button>
+  </div>
+
+<div id='hider'>
+  <div id="facebook-feed">
+    <div id="fb-container">
+      <h1>Facebook Group Memes</h1>
+      <input id="fb-search" type="text" name="fb-search" placeholder="Search..">
     </div>
-    <div id="facebook-feed">
-        <div id="fb-container">
-            <h1>Facebook Group Memes</h1>
-            <input id="fb-search" type="text" name="search" placeholder="Search..">
-          </div>
-          <div id="fb-memes">
-          </div>
+    <div id="fb-memes">
     </div>
-    <div id="universal-feed">
-      <div id="container">
-        <h1>Meme Search</h1>
-        <input id="search" type="text" name="search" placeholder="Search..">
-      </div>
-      <div id="memes">
-      </div>
+  </div>
+</div>
+
+  <div id="universal-feed">
+    <div id="container">
+      <h1>Meme Search</h1>
+      <input id="search" type="text" name="search" placeholder="Search...">
     </div>
-  </body>
+    <div id="memes"></div>
+  </div>
+</body>
+
 </html>
-

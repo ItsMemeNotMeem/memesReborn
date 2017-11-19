@@ -15,53 +15,48 @@ $(document).ready(function () {
     });
   })(console.log)
 
-  console.log('memes')
-
-
   var $divParent = $('<div>')
   $divParent.addClass('parent')
-  
-  getMemes().then(function (data) {
-    console.log('data', data)
-    var memes = data.data.memes
-    for (var i = 0; i < 12; i++) {
-      $divChild = $('<div>')
-      $p = $('<p>')
-      memes[i]
-      var name = memes[i].name
-      var url = memes[i].url
-      var width = memes[i].width
-      var height = memes[i].height
-      console.log('name url width height', name, url, width, height)
-      $p.text(name)
-      var $img = $('<img>')
-      $img.attr({ name: name, src: url, width: 220, href: url })
-      $img.click(function () {
-        chrome.tabs.create({ url: $(this).attr('href') })
-      })
-      var $imgWrap = $('<div>')
-      $imgWrap.addClass('imageWrapper')
-      $divChild.append($p)
-      $imgWrap.append($img)
-      $divChild.append($imgWrap)
-      $divParent.append($divChild)
-    }
-    $('#memes').append($divParent)
-  })
+  $('html').removeClass('no-js')
 
-  $('#show-universal').on('click',function(){
+  // getMemes().then(function (data) {
+  //   var memes = data.data.memes
+  //   for (var i = 0; i < 12; i++) {
+  //     $initialDivChild = $('<div>')
+  //     $p = $('<p>')
+  //     memes[i]
+  //     var name = memes[i].name
+  //     var url = memes[i].url
+  //     var width = memes[i].width
+  //     var height = memes[i].height
+  //     $p.text(name)
+  //     var $img = $('<img>')
+  //     $img.attr({ name: name, src: url, width: 220, href: url })
+  //     $img.click(function () {
+  //       chrome.tabs.create({ url: $(this).attr('href') })
+  //     })
+  //     var $imgWrap = $('<div>')
+  //     $imgWrap.addClass('imageWrapper')
+  //     $initialDivChild.append($p)
+  //     $imgWrap.append($img)
+  //     $initialDivChild.append($imgWrap)
+  //     $initialDivParent.append($initialDivChild)
+  //   }
+  //   $('#initial-memes').append($initialDivParent)
+  // })
+
+  $('#show-universal').on('click', function () {
     $('#facebook-feed').show()
     $('#universal-feed').hide()
   })
-  $('#show-fb').on('click', function(){
+  $('#show-fb').on('click', function () {
     $('#facebook-feed').hide()
     $('#universal-feed').show()
   })
   $('#search').on('change', function (e) {
     $('.divChild').remove();
-    searchWord = document.getElementsByName('search')[0].value.toLowerCase();    
+    searchWord = document.getElementsByName('search')[0].value.toLowerCase();
     getMemes().then(function (data) {
-
       var memes = data.data.memes;
       for (let i = 0; i < memes.length; i++) {
         if (memes[i].name.toLowerCase().includes(searchWord)) {
@@ -73,7 +68,6 @@ $(document).ready(function () {
           var url = memes[i].url
           var width = memes[i].width
           var height = memes[i].height
-          console.log('name url width height', name, url, width, height)
           $p.text(name)
           var $img = $('<img>')
           $img.attr({ name: name, src: url, width: 200, href: url })
@@ -88,13 +82,9 @@ $(document).ready(function () {
           $divParent.append($divChild)
           $('#memes').append($divParent)
         }
-
-
       }
-
     })
   })
-
 })
 
 
