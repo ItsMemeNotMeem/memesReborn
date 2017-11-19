@@ -49,6 +49,14 @@ $(document).ready(function () {
   //   $('#memes').append($divParent)
   // })
 
+  $('#show-universal').on('click',function(){
+    $('#facebook-feed').show()
+    $('#universal-feed').hide()
+  })
+  $('#show-fb').on('click', function(){
+    $('#facebook-feed').hide()
+    $('#universal-feed').show()
+  })
   $('#search').on('change', function (e) {
     $('.divChild').remove();
     searchWord = document.getElementsByName('search')[0].value.toLowerCase();    

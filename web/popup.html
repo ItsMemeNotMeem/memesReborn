@@ -141,14 +141,24 @@
   </head>
   <body>
     <div class="btn-group">
-      <button>Facebook Group Feed</button>
-      <button>Database</button>
+      <button id='show-fb'>Facebook Group Feed</button>
+      <button id='show-universal'>Database</button>
     </div>
-    <div id="container">
+    <div id="facebook-feed">
+        <div id="fb-container">
+            <h1>Facebook Group Memes</h1>
+            <input id="search" type="text" name="search" placeholder="Search..">
+          </div>
+          <div id="fb-memes">
+          </div>
+    </div>
+    <div id="universal-feed">
+      <div id="container">
         <h1>Meme Search</h1>
         <input id="search" type="text" name="search" placeholder="Search..">
-    </div>
-    <div id="memes">
+      </div>
+      <div id="memes">
+      </div>
     </div>
   </body>
 </html>
