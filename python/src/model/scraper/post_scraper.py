@@ -5,7 +5,6 @@ import requests
 
 from config import load_token
 from model.entities import Post
-
 TOKEN = load_token()
 
 FACEBOOK_GRAPH_BASE_URL = "https://graph.facebook.com/v2.11/"
