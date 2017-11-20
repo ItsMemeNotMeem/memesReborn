@@ -1,7 +1,7 @@
 # MemeSearch (a Google Chrome extension)
 HOW TO INSTALL:
 
-Clone the git to a location of your choice.
+Clone the git project to a location of your choice.
 
 Run 'npm install' in terminal in the web folder.
 
