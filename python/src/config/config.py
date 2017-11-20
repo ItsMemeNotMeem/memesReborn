@@ -31,7 +31,7 @@ def load_token() -> str:
 
 
 def download_nltk():
-    nltk.download()
+    nltk.download('all')
 
 
 if __name__ == '__main__':

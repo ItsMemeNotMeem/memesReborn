@@ -8,7 +8,11 @@ TOKEN = load_token()
 
 
 def get_json_response(response):
-    return json.loads(response.content)
+    json_response = json.loads(response.content)
+    if 'error' in json_response:
+        error_json = json_response['error']
+        raise ConnectionRefusedError(error_json['message'])
+    return json_response
 
 
 def generate_url_query(query):

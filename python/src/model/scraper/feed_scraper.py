@@ -10,17 +10,13 @@ BRUINFEED = "163576114113950"
 
 
 class FeedScraper:
-    def __init__(self, feed_id: str, limit: str):
+    def __init__(self, feed_id: str, limit: int):
         self.feed_id = feed_id
         self.limit = limit
 
-    def get_posts(self):
+    def get_id_posts(self):
         feed_response = requests.get(
-            generate_url_query(self.feed_id + "/feed?limit=" + self.limit)
+            generate_url_query(self.feed_id + "/feed?limit=" + str(self.limit))
         )
-        return get_json_response(feed_response)
-
-
-feedscraper = FeedScraper(BRUINFEED, "25")
-datetime = feedscraper.get_posts()
-print(datetime)
+        json_posts = get_json_response(feed_response)
+        return [json_post['id'] for json_post in json_posts['data']]

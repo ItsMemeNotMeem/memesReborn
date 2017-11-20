@@ -17,4 +17,10 @@ def test_get_picture_url():
     )
 
 
+def test_get_message():
+    post_scraper = PostScraper('163576114113950_359337581204468')
+    assert 'Chem 14a reax only Jason Muljadi' == post_scraper.get_message()
+
+
 test_get_picture_url()
+test_get_message()

@@ -5,9 +5,9 @@ from model.entities import Comment
 
 
 class Post:
-    def __init__(self, text: str, image: str, comments: List[Comment], url: str,
+    def __init__(self, message: str, image: str, comments: List[Comment], url: str,
                  date_posted: datetime, latest_update: datetime):
-        self.text = text
+        self.message = message
         self.image = image
         self.comments = comments
         self.url = url
