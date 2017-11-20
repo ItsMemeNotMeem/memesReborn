@@ -9,9 +9,10 @@ Open up google chrome.
 
 Go to options (3 dots in upper right corner) --> more tools --> extensions
 
-Check the developer mode
+Make sure the "developer mode" checkbox near the top is checked
 
 Click "load unpacked extension"
 
 Select the "web" folder within the app
 
+You should see the extension icon in upper right corner (pepe the frog)
