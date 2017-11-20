@@ -1,6 +1,5 @@
 # MemeSearch (a Google Chrome extension)
-Dank memes
-
+HOW TO INSTALL:
 
 Clone the git to a location of your choice.
 
@@ -16,5 +15,3 @@ Click "load unpacked extension"
 
 Select the "web" folder within the app
 
-
-Extension should be all set up!
