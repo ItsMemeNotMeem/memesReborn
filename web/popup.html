@@ -60,12 +60,13 @@
     }
 
     body {
-      width: 800px;
-      height: 800px;
+      width: '80%';
+      height: '80%';
       background-color: #EEE;
     }
 
     .parent {
+      background-color: #3b5998;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -82,7 +83,7 @@
     }
 
     .imageWrapper {
-      height: 150px;
+      /* width: 100%; */
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -105,7 +106,7 @@
     }
 
     #memes img {
-      margin-top: 25px;
+      
       font-size: 21px;
       text-align: center;
       -webkit-animation: fadein 1s;
@@ -138,10 +139,13 @@
       -webkit-transition: opacity .55s ease-in-out;
     }
 
-    /* div p {
-      width: 200px;
-      height: 50px;
-    } */
+    div p {
+      margin: 0;
+      padding: 15px;
+      background-color: white;
+      font-size: 25px;
+      font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    }
 
     @keyframes fadein {
       from {

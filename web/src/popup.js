@@ -35,16 +35,16 @@ $(document).ready(function () {
     $('.divChild').remove();
     searchWord = document.getElementsByName('search')[0].value.toLowerCase();
     if (searchWord in dummyData) {
-      dummyData[searchWord].forEach(function (meme) {
+      dummyData[searchWord].forEach(function (meme, index) {
         $divChild = $('<div>')
         $divChild.addClass('divChild')
         $p = $('<p>')
         var text = meme.text
         var imageUrl = meme.memeImage
         var fbLink = meme.url
-        $p.text(text)
+        $p.text('#' + (index + 1) + ' ' + text)
         var $img = $('<img>')
-        $img.attr({ name: text, src: imageUrl, width: 200, height: 200, href: fbLink })
+        $img.attr({ name: text, src: imageUrl, href: fbLink, width: '100%', height: 400 })
         $img.click(function () {
           chrome.tabs.create({ url: $(this).attr('href') })
         })
