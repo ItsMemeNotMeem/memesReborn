@@ -3,7 +3,7 @@ HOW TO INSTALL:
 
 Clone the git to a location of your choice.
 
-Run 'npm install' in the web folder.
+Run 'npm install' in terminal in the web folder.
 
 Open up google chrome.
 
